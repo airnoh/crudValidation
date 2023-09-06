@@ -12,6 +12,11 @@ export class TodosController {
         return this.todosService.create(dto);
     }
 
+    @Get(':id')
+    findById(@Param('id') id: number){
+        return this.todosService.findById(id);
+    }
+
     @Get()
     findMany(){
         return this.todosService.findMany();
